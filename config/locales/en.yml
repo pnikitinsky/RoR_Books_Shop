@@ -20,4 +20,42 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      title:  "Bookshelf"
+      home: "Home"
+      questions:  "Questions"
+      news: "News"
+      contacts:  "Contact"
+  store:
+    index:
+      title_html: "Your Catalog"
+      add_html: "Add to Cart"
+      thanks: "Thank you for your order"
+  carts:
+    cart:
+      title:  "Your Cart"
+      empty: "Empty cart"
+      checkout: "Checkout"
+  number:
+    currency:
+        format:
+            unit:         "$"
+            precision:     2
+            separator:     "."
+            delimiter:     ","
+            format:        "%u%n"
+  orders:
+        new:
+           legend:           "Please Enter Your Details"
+        form:
+           name:             "Name"
+           address_html:     "Address"
+           email:            "E-mail"
+           pay_type:         "Pay with"
+           pay_prompt_html:  "Select a payment method"
+           submit:           "Place Order"
+        payment_types:
+            check: "Check"
+            credit_card: "Credit Card"
+            purchase_order: "Purchase Order"
