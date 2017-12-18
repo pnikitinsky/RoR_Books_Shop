@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 20151201100400) do
   end
 
   create_table "line_items", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "cart_id"
+    t.bigint "product_id"
+    t.bigint "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1
     t.decimal "price", precision: 8, scale: 2
-    t.integer "order_id"
+    t.bigint "order_id"
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["order_id"], name: "index_line_items_on_order_id"
     t.index ["product_id"], name: "index_line_items_on_product_id"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20151201100400) do
     t.string "pay_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "pay_type_id"
+    t.bigint "pay_type_id"
     t.datetime "ship_date"
     t.index ["pay_type_id"], name: "index_orders_on_pay_type_id"
   end
@@ -68,4 +68,8 @@ ActiveRecord::Schema.define(version: 20151201100400) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "orders"
+  add_foreign_key "line_items", "products"
+  add_foreign_key "orders", "pay_types"
 end

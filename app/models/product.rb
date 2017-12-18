@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
                   }
   validates :image_url, allow_blank: true, uniqueness:true, format: {
               with: %r{\.(gif|jpg|png)\Z}i,
-              message: 'URL должен указывать на изображение формата GIF, JPG или PNG.'
+              message: 'URL has to be GIF, JPG or PNG.'
                       }
 
   def self.latest

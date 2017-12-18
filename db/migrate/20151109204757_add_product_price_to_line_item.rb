@@ -1,4 +1,4 @@
-class AddProductPriceToLineItem < ActiveRecord::Migration
+class AddProductPriceToLineItem < ActiveRecord::Migration[5.1]
   def change
     reversible do |change|
       change.up do

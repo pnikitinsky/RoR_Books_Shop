@@ -1,4 +1,4 @@
-class CombineItemsInCart < ActiveRecord::Migration
+class CombineItemsInCart < ActiveRecord::Migration[5.1]
   def change
     reversible do |change|
       change.up do
