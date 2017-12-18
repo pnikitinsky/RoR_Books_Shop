@@ -17,12 +17,12 @@ class ApplicationController < ActionController::Base
       end
     end
     def default_url_options
-      {locale: I18n.locale }
+      { locale: I18n.locale }
     end
 
     def authorize
         return if User.count.zero?
-        if request.format == Mime::HTML
+        if request.format == Mime[:html]
           user = User.find_by(id: session[:user_id])
         else
           user = authenticate_or_request_with_http_basic do |u, p|
